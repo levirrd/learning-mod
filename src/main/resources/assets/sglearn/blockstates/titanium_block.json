@@ -1,0 +1,7 @@
+{
+  "variants" : {
+    "": {
+      "model": "sglearn:block/titanium_block"
+    }
+  }
+}

@@ -1,5 +1,8 @@
-package net.slashury.learningmod;
+package net.sg.sglearn;
 
+import net.minecraft.world.item.CreativeModeTabs;
+import net.sg.sglearn.block.ModBlocks;
+import net.sg.sglearn.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -18,18 +21,18 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(TutorialMod.MOD_ID)
-public class TutorialMod
+@Mod(SgLearn.MOD_ID)
+public class SgLearn
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "slashurylearn";
+    public static final String MOD_ID = "sglearn";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public TutorialMod(IEventBus modEventBus, ModContainer modContainer)
+    public SgLearn(IEventBus modEventBus, ModContainer modContainer)
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -41,6 +44,9 @@ public class TutorialMod
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -56,7 +62,13 @@ public class TutorialMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.TITANIUM_INGOT);
+            event.accept(ModItems.SOUL_INGOT);
+            event.accept(ModItems.CHARGE_INGOT);
+            event.accept(ModBlocks.TITANIUM_BLOCK);
+            event.accept(ModBlocks.TITANIUM_ORE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
