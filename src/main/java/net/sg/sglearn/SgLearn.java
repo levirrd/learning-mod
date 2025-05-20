@@ -2,6 +2,7 @@ package net.sg.sglearn;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.sg.sglearn.block.ModBlocks;
+import net.sg.sglearn.item.ModCreativeModeTabs;
 import net.sg.sglearn.item.ModItems;
 import org.slf4j.Logger;
 
@@ -44,7 +45,7 @@ public class SgLearn
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         // Register the item to a creative tab
@@ -62,13 +63,6 @@ public class SgLearn
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.TITANIUM_INGOT);
-            event.accept(ModItems.SOUL_INGOT);
-            event.accept(ModItems.CHARGE_INGOT);
-            event.accept(ModBlocks.TITANIUM_BLOCK);
-            event.accept(ModBlocks.TITANIUM_ORE);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

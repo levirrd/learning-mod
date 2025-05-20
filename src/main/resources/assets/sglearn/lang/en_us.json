@@ -3,6 +3,6 @@
   "item.sglearn.soulingot" : "Soul Ingot",
   "item.sglearn.charge_ingot" : "Charge Ingot",
   "block.sglearn.titanium_block" : "Titanium Block",
-  "block.sglearn.titanium_ore" : "Titanium Ore"
-
+  "block.sglearn.titanium_ore" : "Titanium Ore",
+  "creativetab.sglearn.sg_items": "S&G Items"
 }
