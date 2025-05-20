@@ -25,7 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_INGOT);
                         output.accept(ModBlocks.TITANIUM_ORE);
                         output.accept(ModBlocks.TITANIUM_BLOCK);
-
+                        output.accept(ModItems.SOUL_DAGGER);
                     }))
 
                     .build());

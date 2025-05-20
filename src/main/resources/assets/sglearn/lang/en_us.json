@@ -1,8 +1,9 @@
 {
-  "item.sglearn.titaniumingot" : "Titanium Ingot",
-  "item.sglearn.soulingot" : "Soul Ingot",
+  "item.sglearn.titanium_ingot" : "Titanium Ingot",
+  "item.sglearn.soul_ingot" : "Soul Ingot",
   "item.sglearn.charge_ingot" : "Charge Ingot",
   "block.sglearn.titanium_block" : "Titanium Block",
   "block.sglearn.titanium_ore" : "Titanium Ore",
-  "creativetab.sglearn.sg_items": "S&G Items"
+  "creativetab.sglearn.sg_items": "S&G Items",
+  "item.sglearn.soul_dagger" : "Soul Dagger"
 }
