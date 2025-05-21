@@ -5,5 +5,6 @@
   "block.sglearn.titanium_block" : "Titanium Block",
   "block.sglearn.titanium_ore" : "Titanium Ore",
   "creativetab.sglearn.sg_items": "S&G Items",
-  "item.sglearn.soul_dagger" : "Soul Dagger"
+  "item.sglearn.soul_dagger" : "Soul Dagger",
+  "item.sglearn.raw_titanium" : "Raw Titanium"
 }
