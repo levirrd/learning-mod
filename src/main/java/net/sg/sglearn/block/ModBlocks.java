@@ -1,7 +1,9 @@
 package net.sg.sglearn.block;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -20,21 +22,19 @@ public class ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.of()
                     .strength(0.5F)
                     .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> TITANIUM_ORE = registerBlock("titanium_ore", ()->
-            new Block(BlockBehaviour.Properties.of()
-                    .strength(0.4F)
-                    .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> TITANIUM_DEEPSLATE_ORE = registerBlock("titanium_deepslate_ore", ()->
+            new DropExperienceBlock(UniformInt.of(2,4),BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name,block);
         registerBlockItem(name,toReturn);
         return toReturn;
     }
-
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
         ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties()));
     }
-
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

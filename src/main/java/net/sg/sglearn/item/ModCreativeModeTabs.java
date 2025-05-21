@@ -1,6 +1,5 @@
 package net.sg.sglearn.item;
 
-import net.minecraft.client.gui.components.tabs.Tab;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,7 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHARGE_INGOT);
                         output.accept(ModItems.SOUL_INGOT);
                         output.accept(ModItems.TITANIUM_INGOT);
-                        output.accept(ModBlocks.TITANIUM_ORE);
+                        output.accept(ModBlocks.TITANIUM_DEEPSLATE_ORE);
                         output.accept(ModBlocks.TITANIUM_BLOCK);
                         output.accept(ModItems.SOUL_DAGGER);
                         output.accept(ModItems.RAW_TITANIUM);
