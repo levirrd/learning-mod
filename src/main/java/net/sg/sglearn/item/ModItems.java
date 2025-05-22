@@ -7,12 +7,11 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sg.sglearn.SgLearn;
+import net.sg.sglearn.item.custom.SoulDaggerItem;
 
-import java.util.function.Supplier;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SgLearn.MOD_ID);
@@ -26,8 +25,8 @@ public class ModItems {
     public static final DeferredItem<Item> CHARGE_INGOT = ITEMS.register("charge_ingot",
             ()-> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     //soul dagger
-    public static final DeferredItem<SwordItem> SOUL_DAGGER = ITEMS.register("soul_dagger", () -> new SwordItem(
-            Tiers.NETHERITE, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.NETHERITE,4, -1.0f)).rarity(Rarity.EPIC)));
+    public static final DeferredItem<SwordItem> SOUL_DAGGER = ITEMS.register("soul_dagger",
+            ()-> new SoulDaggerItem(Tiers.NETHERITE, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.NETHERITE,2,-2.0F))));
     //raw titanium
     public static final DeferredItem<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
             ()-> new Item(new Item.Properties()));
